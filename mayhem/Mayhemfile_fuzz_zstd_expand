@@ -1,0 +1,10 @@
+# HISE preset/user-preset decompression: zstd::ZCompressor::expand() into MemoryBlock, String and ValueTree, plus expandInplace().
+project: savantenvs/HISE
+target: fuzz_zstd_expand
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_zstd_expand/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_zstd_expand
+    libfuzzer: true
+    timeout: 30

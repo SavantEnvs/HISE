@@ -1,0 +1,10 @@
+# HLAC (HISE lossless audio codec) reader: header parsing + block decoding, float and int16 targets.
+project: savantenvs/HISE
+target: fuzz_hlac_reader
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_hlac_reader/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_hlac_reader
+    libfuzzer: true
+    timeout: 30
